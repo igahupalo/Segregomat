@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452A245DF3C9001CAB56 /* AppDelegate.swift */; };
+		42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */; };
+		42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452E245DF3C9001CAB56 /* ContentView.swift */; };
+		42D04531245DF3CB001CAB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D04530245DF3CB001CAB56 /* Assets.xcassets */; };
+		42D04534245DF3CB001CAB56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D04533245DF3CB001CAB56 /* Preview Assets.xcassets */; };
+		42D04537245DF3CB001CAB56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */; };
+		42D04542245DF3CC001CAB56 /* SegregomatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04541245DF3CC001CAB56 /* SegregomatTests.swift */; };
+		42D0454D245DF3CC001CAB56 /* SegregomatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0454C245DF3CC001CAB56 /* SegregomatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42D0453E245DF3CC001CAB56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D0451F245DF3C9001CAB56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D04526245DF3C9001CAB56;
+			remoteInfo = Segregomat;
+		};
+		42D04549245DF3CC001CAB56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42D0451F245DF3C9001CAB56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D04526245DF3C9001CAB56;
+			remoteInfo = Segregomat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42D04527245DF3C9001CAB56 /* Segregomat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segregomat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D0452A245DF3C9001CAB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		42D0452E245DF3C9001CAB56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42D04530245DF3CB001CAB56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42D04533245DF3CB001CAB56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42D04536245DF3CB001CAB56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42D04538245DF3CB001CAB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D0453D245DF3CC001CAB56 /* SegregomatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegregomatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D04541245DF3CC001CAB56 /* SegregomatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegregomatTests.swift; sourceTree = "<group>"; };
+		42D04543245DF3CC001CAB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D04548245DF3CC001CAB56 /* SegregomatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegregomatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D0454C245DF3CC001CAB56 /* SegregomatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegregomatUITests.swift; sourceTree = "<group>"; };
+		42D0454E245DF3CC001CAB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42D04524245DF3C9001CAB56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D0453A245DF3CC001CAB56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D04545245DF3CC001CAB56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42D0451E245DF3C9001CAB56 = {
+			isa = PBXGroup;
+			children = (
+				42D04529245DF3C9001CAB56 /* Segregomat */,
+				42D04540245DF3CC001CAB56 /* SegregomatTests */,
+				42D0454B245DF3CC001CAB56 /* SegregomatUITests */,
+				42D04528245DF3C9001CAB56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42D04528245DF3C9001CAB56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42D04527245DF3C9001CAB56 /* Segregomat.app */,
+				42D0453D245DF3CC001CAB56 /* SegregomatTests.xctest */,
+				42D04548245DF3CC001CAB56 /* SegregomatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42D04529245DF3C9001CAB56 /* Segregomat */ = {
+			isa = PBXGroup;
+			children = (
+				42D0452A245DF3C9001CAB56 /* AppDelegate.swift */,
+				42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */,
+				42D0452E245DF3C9001CAB56 /* ContentView.swift */,
+				42D04530245DF3CB001CAB56 /* Assets.xcassets */,
+				42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */,
+				42D04538245DF3CB001CAB56 /* Info.plist */,
+				42D04532245DF3CB001CAB56 /* Preview Content */,
+			);
+			path = Segregomat;
+			sourceTree = "<group>";
+		};
+		42D04532245DF3CB001CAB56 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				42D04533245DF3CB001CAB56 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42D04540245DF3CC001CAB56 /* SegregomatTests */ = {
+			isa = PBXGroup;
+			children = (
+				42D04541245DF3CC001CAB56 /* SegregomatTests.swift */,
+				42D04543245DF3CC001CAB56 /* Info.plist */,
+			);
+			path = SegregomatTests;
+			sourceTree = "<group>";
+		};
+		42D0454B245DF3CC001CAB56 /* SegregomatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42D0454C245DF3CC001CAB56 /* SegregomatUITests.swift */,
+				42D0454E245DF3CC001CAB56 /* Info.plist */,
+			);
+			path = SegregomatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42D04526245DF3C9001CAB56 /* Segregomat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D04551245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "Segregomat" */;
+			buildPhases = (
+				42D04523245DF3C9001CAB56 /* Sources */,
+				42D04524245DF3C9001CAB56 /* Frameworks */,
+				42D04525245DF3C9001CAB56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Segregomat;
+			productName = Segregomat;
+			productReference = 42D04527245DF3C9001CAB56 /* Segregomat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42D0453C245DF3CC001CAB56 /* SegregomatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D04554245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatTests" */;
+			buildPhases = (
+				42D04539245DF3CC001CAB56 /* Sources */,
+				42D0453A245DF3CC001CAB56 /* Frameworks */,
+				42D0453B245DF3CC001CAB56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42D0453F245DF3CC001CAB56 /* PBXTargetDependency */,
+			);
+			name = SegregomatTests;
+			productName = SegregomatTests;
+			productReference = 42D0453D245DF3CC001CAB56 /* SegregomatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42D04547245DF3CC001CAB56 /* SegregomatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D04557245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatUITests" */;
+			buildPhases = (
+				42D04544245DF3CC001CAB56 /* Sources */,
+				42D04545245DF3CC001CAB56 /* Frameworks */,
+				42D04546245DF3CC001CAB56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42D0454A245DF3CC001CAB56 /* PBXTargetDependency */,
+			);
+			name = SegregomatUITests;
+			productName = SegregomatUITests;
+			productReference = 42D04548245DF3CC001CAB56 /* SegregomatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42D0451F245DF3C9001CAB56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Iga Hupalo";
+				TargetAttributes = {
+					42D04526245DF3C9001CAB56 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					42D0453C245DF3CC001CAB56 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 42D04526245DF3C9001CAB56;
+					};
+					42D04547245DF3CC001CAB56 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 42D04526245DF3C9001CAB56;
+					};
+				};
+			};
+			buildConfigurationList = 42D04522245DF3C9001CAB56 /* Build configuration list for PBXProject "Segregomat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42D0451E245DF3C9001CAB56;
+			productRefGroup = 42D04528245DF3C9001CAB56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42D04526245DF3C9001CAB56 /* Segregomat */,
+				42D0453C245DF3CC001CAB56 /* SegregomatTests */,
+				42D04547245DF3CC001CAB56 /* SegregomatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42D04525245DF3C9001CAB56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D04537245DF3CB001CAB56 /* LaunchScreen.storyboard in Resources */,
+				42D04534245DF3CB001CAB56 /* Preview Assets.xcassets in Resources */,
+				42D04531245DF3CB001CAB56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D0453B245DF3CC001CAB56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D04546245DF3CC001CAB56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42D04523245DF3C9001CAB56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */,
+				42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */,
+				42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D04539245DF3CC001CAB56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D04542245DF3CC001CAB56 /* SegregomatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42D04544245DF3CC001CAB56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42D0454D245DF3CC001CAB56 /* SegregomatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42D0453F245DF3CC001CAB56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D04526245DF3C9001CAB56 /* Segregomat */;
+			targetProxy = 42D0453E245DF3CC001CAB56 /* PBXContainerItemProxy */;
+		};
+		42D0454A245DF3CC001CAB56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D04526245DF3C9001CAB56 /* Segregomat */;
+			targetProxy = 42D04549245DF3CC001CAB56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42D04536245DF3CB001CAB56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42D0454F245DF3CC001CAB56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42D04550245DF3CC001CAB56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42D04552245DF3CC001CAB56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/Preview Content\"";
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Segregomat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.Segregomat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42D04553245DF3CC001CAB56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/Preview Content\"";
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Segregomat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.Segregomat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42D04555245DF3CC001CAB56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				INFOPLIST_FILE = SegregomatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.SegregomatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Segregomat.app/Segregomat";
+			};
+			name = Debug;
+		};
+		42D04556245DF3CC001CAB56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				INFOPLIST_FILE = SegregomatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.SegregomatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Segregomat.app/Segregomat";
+			};
+			name = Release;
+		};
+		42D04558245DF3CC001CAB56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				INFOPLIST_FILE = SegregomatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.SegregomatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Segregomat;
+			};
+			name = Debug;
+		};
+		42D04559245DF3CC001CAB56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H77979Y8DF;
+				INFOPLIST_FILE = SegregomatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = one.igahupalo.SegregomatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Segregomat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42D04522245DF3C9001CAB56 /* Build configuration list for PBXProject "Segregomat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D0454F245DF3CC001CAB56 /* Debug */,
+				42D04550245DF3CC001CAB56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42D04551245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "Segregomat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D04552245DF3CC001CAB56 /* Debug */,
+				42D04553245DF3CC001CAB56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42D04554245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D04555245DF3CC001CAB56 /* Debug */,
+				42D04556245DF3CC001CAB56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42D04557245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42D04558245DF3CC001CAB56 /* Debug */,
+				42D04559245DF3CC001CAB56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42D0451F245DF3C9001CAB56 /* Project object */;
+}
