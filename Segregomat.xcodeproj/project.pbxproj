@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423356B92460CCF600331EBB /* AuthorsView.swift */; };
+		42959B4B24621A3D00DA859C /* PszokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4A24621A3D00DA859C /* PszokView.swift */; };
+		42959B4D246220FF00DA859C /* NoTrashcanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4C246220FF00DA859C /* NoTrashcanView.swift */; };
 		42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452A245DF3C9001CAB56 /* AppDelegate.swift */; };
 		42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */; };
 		42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452E245DF3C9001CAB56 /* ContentView.swift */; };
@@ -70,6 +73,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		423356B92460CCF600331EBB /* AuthorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsView.swift; sourceTree = "<group>"; };
+		42959B4A24621A3D00DA859C /* PszokView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PszokView.swift; sourceTree = "<group>"; };
+		42959B4C246220FF00DA859C /* NoTrashcanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTrashcanView.swift; sourceTree = "<group>"; };
 		42D04527245DF3C9001CAB56 /* Segregomat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segregomat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D0452A245DF3C9001CAB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				42D04538245DF3CB001CAB56 /* Info.plist */,
 				42D04532245DF3CB001CAB56 /* Preview Content */,
 				42D04587245E2457001CAB56 /* TrashcanView.swift */,
+				423356B92460CCF600331EBB /* AuthorsView.swift */,
+				42959B4A24621A3D00DA859C /* PszokView.swift */,
+				42959B4C246220FF00DA859C /* NoTrashcanView.swift */,
 			);
 			path = Segregomat;
 			sourceTree = "<group>";
@@ -368,9 +377,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42959B4B24621A3D00DA859C /* PszokView.swift in Sources */,
 				42D04588245E2457001CAB56 /* TrashcanView.swift in Sources */,
+				423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */,
 				42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */,
 				42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */,
+				42959B4D246220FF00DA859C /* NoTrashcanView.swift in Sources */,
 				42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
