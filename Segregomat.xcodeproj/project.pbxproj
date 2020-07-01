@@ -3,16 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156258AE57EB8715FA9F9510 /* Pods_SegregomatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0BFB1A537E5C6A7796F51 /* Pods_SegregomatTests.framework */; };
+		167953E5DF1B28F16A2A3C8E /* Pods_Segregomat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EBD5AFA11E877EAA2A011D /* Pods_Segregomat.framework */; };
 		423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423356B92460CCF600331EBB /* AuthorsView.swift */; };
+		423FD6CF24A616DC001CA36A /* launchScreenAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 423FD6CE24A616DB001CA36A /* launchScreenAnimation.gif */; };
+		425CA64124A94539008FF4C2 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64024A94539008FF4C2 /* ItemModel.swift */; };
+		425CA64424A949BC008FF4C2 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64324A949BC008FF4C2 /* Components.swift */; };
+		425CA64624A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425CA64524A94FD2008FF4C2 /* GoogleService-Info.plist */; };
+		425CA64724A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425CA64524A94FD2008FF4C2 /* GoogleService-Info.plist */; };
+		425CA64824A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 425CA64524A94FD2008FF4C2 /* GoogleService-Info.plist */; };
+		425CA64A24AA0E37008FF4C2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64924AA0E37008FF4C2 /* Session.swift */; };
+		425CA64C24AA2AD0008FF4C2 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64B24AA2AD0008FF4C2 /* View+Ext.swift */; };
+		425CA64F24ABC931008FF4C2 /* ListPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64E24ABC931008FF4C2 /* ListPosition.swift */; };
+		425CA65124ABE8A4008FF4C2 /* DetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA65024ABE8A4008FF4C2 /* DetailsButton.swift */; };
+		4284F07324A7FF9500DB4978 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07224A7FF9500DB4978 /* ItemViewModel.swift */; };
+		4284F07524A7FFA400DB4978 /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07424A7FFA400DB4978 /* ItemListViewModel.swift */; };
+		4284F07724A7FFEF00DB4978 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07624A7FFEF00DB4978 /* MainViewModel.swift */; };
+		4284F07924A8001700DB4978 /* ClassifiedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07824A8001700DB4978 /* ClassifiedViewModel.swift */; };
+		4284F07C24A802CA00DB4978 /* NavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07B24A802CA00DB4978 /* NavigationController+Ext.swift */; };
 		42959B4B24621A3D00DA859C /* PszokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4A24621A3D00DA859C /* PszokView.swift */; };
-		42959B4D246220FF00DA859C /* NoTrashcanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4C246220FF00DA859C /* NoTrashcanView.swift */; };
+		42959B4D246220FF00DA859C /* UnclassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4C246220FF00DA859C /* UnclassifiedView.swift */; };
 		42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452A245DF3C9001CAB56 /* AppDelegate.swift */; };
 		42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */; };
-		42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452E245DF3C9001CAB56 /* ContentView.swift */; };
+		42D0452F245DF3C9001CAB56 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452E245DF3C9001CAB56 /* MainView.swift */; };
 		42D04531245DF3CB001CAB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D04530245DF3CB001CAB56 /* Assets.xcassets */; };
 		42D04534245DF3CB001CAB56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D04533245DF3CB001CAB56 /* Preview Assets.xcassets */; };
 		42D04537245DF3CB001CAB56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */; };
@@ -50,9 +67,10 @@
 		42D04583245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */; };
 		42D04584245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */; };
 		42D04585245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */; };
-		42D04588245E2457001CAB56 /* TrashcanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* TrashcanView.swift */; };
-		42D04589245E2457001CAB56 /* TrashcanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* TrashcanView.swift */; };
-		42D0458A245E2457001CAB56 /* TrashcanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* TrashcanView.swift */; };
+		42D04588245E2457001CAB56 /* ClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* ClassifiedView.swift */; };
+		42D04589245E2457001CAB56 /* ClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* ClassifiedView.swift */; };
+		42D0458A245E2457001CAB56 /* ClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* ClassifiedView.swift */; };
+		8097A259F408701CF7C3D5C0 /* Pods_Segregomat_SegregomatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D23AAA31F21F5FB7682BF7 /* Pods_Segregomat_SegregomatUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,13 +91,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C624C44F4781FEB6C8B74D6 /* Pods-Segregomat-SegregomatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segregomat-SegregomatUITests.release.xcconfig"; path = "Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1BF0BFB1A537E5C6A7796F51 /* Pods_SegregomatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SegregomatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D23AAA31F21F5FB7682BF7 /* Pods_Segregomat_SegregomatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Segregomat_SegregomatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF1426599407E9006E6E433 /* Pods-Segregomat-SegregomatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segregomat-SegregomatUITests.debug.xcconfig"; path = "Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		423356B92460CCF600331EBB /* AuthorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsView.swift; sourceTree = "<group>"; };
+		423FD6CE24A616DB001CA36A /* launchScreenAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launchScreenAnimation.gif; sourceTree = "<group>"; };
+		425CA64024A94539008FF4C2 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		425CA64324A949BC008FF4C2 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		425CA64524A94FD2008FF4C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		425CA64924AA0E37008FF4C2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		425CA64B24AA2AD0008FF4C2 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		425CA64E24ABC931008FF4C2 /* ListPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPosition.swift; sourceTree = "<group>"; };
+		425CA65024ABE8A4008FF4C2 /* DetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButton.swift; sourceTree = "<group>"; };
+		4284F07224A7FF9500DB4978 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		4284F07424A7FFA400DB4978 /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
+		4284F07624A7FFEF00DB4978 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4284F07824A8001700DB4978 /* ClassifiedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedViewModel.swift; sourceTree = "<group>"; };
+		4284F07B24A802CA00DB4978 /* NavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Ext.swift"; sourceTree = "<group>"; };
 		42959B4A24621A3D00DA859C /* PszokView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PszokView.swift; sourceTree = "<group>"; };
-		42959B4C246220FF00DA859C /* NoTrashcanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTrashcanView.swift; sourceTree = "<group>"; };
+		42959B4C246220FF00DA859C /* UnclassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnclassifiedView.swift; sourceTree = "<group>"; };
 		42D04527245DF3C9001CAB56 /* Segregomat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segregomat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D0452A245DF3C9001CAB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42D0452E245DF3C9001CAB56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42D0452E245DF3C9001CAB56 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		42D04530245DF3CB001CAB56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D04533245DF3CB001CAB56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42D04536245DF3CB001CAB56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,7 +137,12 @@
 		42D04565245E0B6B001CAB56 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
 		42D04566245E0B6B001CAB56 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
-		42D04587245E2457001CAB56 /* TrashcanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashcanView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		42D04587245E2457001CAB56 /* ClassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		66EBD5AFA11E877EAA2A011D /* Pods_Segregomat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Segregomat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4E5F5004277E7C856D8DDB /* Pods-Segregomat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segregomat.release.xcconfig"; path = "Target Support Files/Pods-Segregomat/Pods-Segregomat.release.xcconfig"; sourceTree = "<group>"; };
+		8766D039D25C59AEDC10FDBF /* Pods-SegregomatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegregomatTests.release.xcconfig"; path = "Target Support Files/Pods-SegregomatTests/Pods-SegregomatTests.release.xcconfig"; sourceTree = "<group>"; };
+		90A2EE0142FC6FE76EF7FF43 /* Pods-SegregomatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SegregomatTests.debug.xcconfig"; path = "Target Support Files/Pods-SegregomatTests/Pods-SegregomatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E91BEDAE8A60725FCA9B54FB /* Pods-Segregomat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segregomat.debug.xcconfig"; path = "Target Support Files/Pods-Segregomat/Pods-Segregomat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167953E5DF1B28F16A2A3C8E /* Pods_Segregomat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156258AE57EB8715FA9F9510 /* Pods_SegregomatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,21 +166,122 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8097A259F408701CF7C3D5C0 /* Pods_Segregomat_SegregomatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04F69F08185FC8842F51BC53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66EBD5AFA11E877EAA2A011D /* Pods_Segregomat.framework */,
+				24D23AAA31F21F5FB7682BF7 /* Pods_Segregomat_SegregomatUITests.framework */,
+				1BF0BFB1A537E5C6A7796F51 /* Pods_SegregomatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4284F06724A7F31400DB4978 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				42D0452A245DF3C9001CAB56 /* AppDelegate.swift */,
+				42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4284F06824A7F6D600DB4978 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				42D04538245DF3CB001CAB56 /* Info.plist */,
+				42D04530245DF3CB001CAB56 /* Assets.xcassets */,
+				42D04532245DF3CB001CAB56 /* Preview Content */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4284F06A24A7FDC300DB4978 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4284F06B24A7FDD900DB4978 /* LaunchScreen */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4284F06B24A7FDD900DB4978 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				423FD6CE24A616DB001CA36A /* launchScreenAnimation.gif */,
+				42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		4284F06C24A7FED800DB4978 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				425CA64024A94539008FF4C2 /* ItemModel.swift */,
+				425CA64924AA0E37008FF4C2 /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4284F06D24A7FEE200DB4978 /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+				4284F07224A7FF9500DB4978 /* ItemViewModel.swift */,
+				4284F07424A7FFA400DB4978 /* ItemListViewModel.swift */,
+				4284F07624A7FFEF00DB4978 /* MainViewModel.swift */,
+				4284F07824A8001700DB4978 /* ClassifiedViewModel.swift */,
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
+		4284F06E24A7FEF000DB4978 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4284F06F24A7FF0D00DB4978 /* Components */,
+				42D0452E245DF3C9001CAB56 /* MainView.swift */,
+				42D04587245E2457001CAB56 /* ClassifiedView.swift */,
+				423356B92460CCF600331EBB /* AuthorsView.swift */,
+				42959B4A24621A3D00DA859C /* PszokView.swift */,
+				42959B4C246220FF00DA859C /* UnclassifiedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4284F06F24A7FF0D00DB4978 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				425CA64324A949BC008FF4C2 /* Components.swift */,
+				425CA64E24ABC931008FF4C2 /* ListPosition.swift */,
+				425CA65024ABE8A4008FF4C2 /* DetailsButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4284F07A24A8028D00DB4978 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4284F07B24A802CA00DB4978 /* NavigationController+Ext.swift */,
+				425CA64B24AA2AD0008FF4C2 /* View+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		42D0451E245DF3C9001CAB56 = {
 			isa = PBXGroup;
 			children = (
-				42D0455C245E0AA9001CAB56 /* Colors.xcassets */,
 				42D0455A245E0A9B001CAB56 /* Images.xcassets */,
+				42D0455C245E0AA9001CAB56 /* Colors.xcassets */,
 				42D04529245DF3C9001CAB56 /* Segregomat */,
 				42D04540245DF3CC001CAB56 /* SegregomatTests */,
 				42D0454B245DF3CC001CAB56 /* SegregomatUITests */,
 				42D04528245DF3C9001CAB56 /* Products */,
+				EF3464DD3D3AD6645328D1A8 /* Pods */,
+				04F69F08185FC8842F51BC53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,18 +298,15 @@
 		42D04529245DF3C9001CAB56 /* Segregomat */ = {
 			isa = PBXGroup;
 			children = (
+				425CA64524A94FD2008FF4C2 /* GoogleService-Info.plist */,
+				4284F07A24A8028D00DB4978 /* Extensions */,
+				4284F06E24A7FEF000DB4978 /* Views */,
+				4284F06D24A7FEE200DB4978 /* ModelViews */,
+				4284F06C24A7FED800DB4978 /* Models */,
+				4284F06A24A7FDC300DB4978 /* Features */,
+				4284F06824A7F6D600DB4978 /* SupportingFiles */,
+				4284F06724A7F31400DB4978 /* App */,
 				42D04586245E0B76001CAB56 /* Fonts */,
-				42D0452A245DF3C9001CAB56 /* AppDelegate.swift */,
-				42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */,
-				42D0452E245DF3C9001CAB56 /* ContentView.swift */,
-				42D04530245DF3CB001CAB56 /* Assets.xcassets */,
-				42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */,
-				42D04538245DF3CB001CAB56 /* Info.plist */,
-				42D04532245DF3CB001CAB56 /* Preview Content */,
-				42D04587245E2457001CAB56 /* TrashcanView.swift */,
-				423356B92460CCF600331EBB /* AuthorsView.swift */,
-				42959B4A24621A3D00DA859C /* PszokView.swift */,
-				42959B4C246220FF00DA859C /* NoTrashcanView.swift */,
 			);
 			path = Segregomat;
 			sourceTree = "<group>";
@@ -214,6 +354,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		EF3464DD3D3AD6645328D1A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E91BEDAE8A60725FCA9B54FB /* Pods-Segregomat.debug.xcconfig */,
+				7D4E5F5004277E7C856D8DDB /* Pods-Segregomat.release.xcconfig */,
+				2AF1426599407E9006E6E433 /* Pods-Segregomat-SegregomatUITests.debug.xcconfig */,
+				0C624C44F4781FEB6C8B74D6 /* Pods-Segregomat-SegregomatUITests.release.xcconfig */,
+				90A2EE0142FC6FE76EF7FF43 /* Pods-SegregomatTests.debug.xcconfig */,
+				8766D039D25C59AEDC10FDBF /* Pods-SegregomatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,9 +374,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42D04551245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "Segregomat" */;
 			buildPhases = (
+				3EF1DE01E71237CDA66F2C9A /* [CP] Check Pods Manifest.lock */,
 				42D04523245DF3C9001CAB56 /* Sources */,
 				42D04524245DF3C9001CAB56 /* Frameworks */,
 				42D04525245DF3C9001CAB56 /* Resources */,
+				97B4DCDBE8442A2DE474C056 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +393,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42D04554245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatTests" */;
 			buildPhases = (
+				5DA3EE84C25362C5E6C86CC9 /* [CP] Check Pods Manifest.lock */,
 				42D04539245DF3CC001CAB56 /* Sources */,
 				42D0453A245DF3CC001CAB56 /* Frameworks */,
 				42D0453B245DF3CC001CAB56 /* Resources */,
@@ -256,9 +412,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42D04557245DF3CC001CAB56 /* Build configuration list for PBXNativeTarget "SegregomatUITests" */;
 			buildPhases = (
+				186164D91403D5F3FC4C1359 /* [CP] Check Pods Manifest.lock */,
 				42D04544245DF3CC001CAB56 /* Sources */,
 				42D04545245DF3CC001CAB56 /* Frameworks */,
 				42D04546245DF3CC001CAB56 /* Resources */,
+				8F3D073B361A17BACCD0F229 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,9 +484,11 @@
 				42D04580245E0B6C001CAB56 /* Rubik-BoldItalic.ttf in Resources */,
 				42D04568245E0B6B001CAB56 /* Rubik-BlackItalic.ttf in Resources */,
 				42D04583245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */,
+				423FD6CF24A616DC001CA36A /* launchScreenAnimation.gif in Resources */,
 				42D0455B245E0A9B001CAB56 /* Images.xcassets in Resources */,
 				42D0456B245E0B6B001CAB56 /* Rubik-Bold.ttf in Resources */,
 				42D04571245E0B6B001CAB56 /* Rubik-Medium.ttf in Resources */,
+				425CA64624A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */,
 				42D04574245E0B6B001CAB56 /* Rubik-MediumItalic.ttf in Resources */,
 				42D0457D245E0B6C001CAB56 /* Rubik-Italic.ttf in Resources */,
 				42D04534245DF3CB001CAB56 /* Preview Assets.xcassets in Resources */,
@@ -348,6 +508,7 @@
 				42D04578245E0B6C001CAB56 /* Rubik-LightItalic.ttf in Resources */,
 				42D0456C245E0B6B001CAB56 /* Rubik-Bold.ttf in Resources */,
 				42D04584245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */,
+				425CA64724A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */,
 				42D04581245E0B6C001CAB56 /* Rubik-BoldItalic.ttf in Resources */,
 				42D04572245E0B6B001CAB56 /* Rubik-Medium.ttf in Resources */,
 			);
@@ -365,6 +526,7 @@
 				42D04579245E0B6C001CAB56 /* Rubik-LightItalic.ttf in Resources */,
 				42D0456D245E0B6B001CAB56 /* Rubik-Bold.ttf in Resources */,
 				42D04585245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */,
+				425CA64824A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */,
 				42D04582245E0B6C001CAB56 /* Rubik-BoldItalic.ttf in Resources */,
 				42D04573245E0B6B001CAB56 /* Rubik-Medium.ttf in Resources */,
 			);
@@ -372,18 +534,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		186164D91403D5F3FC4C1359 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Segregomat-SegregomatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EF1DE01E71237CDA66F2C9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Segregomat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DA3EE84C25362C5E6C86CC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SegregomatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F3D073B361A17BACCD0F229 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97B4DCDBE8442A2DE474C056 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Segregomat/Pods-Segregomat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Segregomat/Pods-Segregomat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Segregomat/Pods-Segregomat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42D04523245DF3C9001CAB56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425CA65124ABE8A4008FF4C2 /* DetailsButton.swift in Sources */,
+				425CA64C24AA2AD0008FF4C2 /* View+Ext.swift in Sources */,
 				42959B4B24621A3D00DA859C /* PszokView.swift in Sources */,
-				42D04588245E2457001CAB56 /* TrashcanView.swift in Sources */,
+				4284F07324A7FF9500DB4978 /* ItemViewModel.swift in Sources */,
+				425CA64124A94539008FF4C2 /* ItemModel.swift in Sources */,
+				425CA64424A949BC008FF4C2 /* Components.swift in Sources */,
+				42D04588245E2457001CAB56 /* ClassifiedView.swift in Sources */,
+				425CA64A24AA0E37008FF4C2 /* Session.swift in Sources */,
 				423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */,
 				42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */,
+				425CA64F24ABC931008FF4C2 /* ListPosition.swift in Sources */,
+				4284F07524A7FFA400DB4978 /* ItemListViewModel.swift in Sources */,
 				42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */,
-				42959B4D246220FF00DA859C /* NoTrashcanView.swift in Sources */,
-				42D0452F245DF3C9001CAB56 /* ContentView.swift in Sources */,
+				4284F07C24A802CA00DB4978 /* NavigationController+Ext.swift in Sources */,
+				4284F07724A7FFEF00DB4978 /* MainViewModel.swift in Sources */,
+				4284F07924A8001700DB4978 /* ClassifiedViewModel.swift in Sources */,
+				42959B4D246220FF00DA859C /* UnclassifiedView.swift in Sources */,
+				42D0452F245DF3C9001CAB56 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D04589245E2457001CAB56 /* TrashcanView.swift in Sources */,
+				42D04589245E2457001CAB56 /* ClassifiedView.swift in Sources */,
 				42D04542245DF3CC001CAB56 /* SegregomatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D0458A245E2457001CAB56 /* TrashcanView.swift in Sources */,
+				42D0458A245E2457001CAB56 /* ClassifiedView.swift in Sources */,
 				42D0454D245DF3CC001CAB56 /* SegregomatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +758,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -536,7 +812,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -548,13 +824,14 @@
 		};
 		42D04552245DF3CC001CAB56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E91BEDAE8A60725FCA9B54FB /* Pods-Segregomat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = H77979Y8DF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Segregomat/Info.plist;
+				INFOPLIST_FILE = Segregomat/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,13 +846,14 @@
 		};
 		42D04553245DF3CC001CAB56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D4E5F5004277E7C856D8DDB /* Pods-Segregomat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Segregomat/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = H77979Y8DF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Segregomat/Info.plist;
+				INFOPLIST_FILE = Segregomat/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,6 +868,7 @@
 		};
 		42D04555245DF3CC001CAB56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A2EE0142FC6FE76EF7FF43 /* Pods-SegregomatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -612,6 +891,7 @@
 		};
 		42D04556245DF3CC001CAB56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8766D039D25C59AEDC10FDBF /* Pods-SegregomatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -634,6 +914,7 @@
 		};
 		42D04558245DF3CC001CAB56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AF1426599407E9006E6E433 /* Pods-Segregomat-SegregomatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,6 +935,7 @@
 		};
 		42D04559245DF3CC001CAB56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C624C44F4781FEB6C8B74D6 /* Pods-Segregomat-SegregomatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

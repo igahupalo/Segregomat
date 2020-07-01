@@ -1,0 +1,6 @@
+framework module Pods_Segregomat {
+  umbrella header "Pods-Segregomat-umbrella.h"
+
+  export *
+  module * { export * }
+}
