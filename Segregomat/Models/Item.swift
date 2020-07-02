@@ -57,6 +57,5 @@ struct Item: Identifiable {
     
     public var description: String {
         return "Name: \(name)\nCategory: \(category)\n"
-        
     }
 }

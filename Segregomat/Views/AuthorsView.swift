@@ -12,9 +12,10 @@ struct AuthorsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         
-         ZStack {
-             Color("colorBackground").edgesIgnoringSafeArea(.all)
-                AuthorsText().frame(alignment: .top)
+        ZStack {
+            Color("colorBackground").edgesIgnoringSafeArea(.all)
+            
+            AuthorsText().frame(alignment: .top)
          }.navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode)).navigationBarTitle("SEGREGOMAT", displayMode: .inline)
         
     }

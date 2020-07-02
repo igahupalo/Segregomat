@@ -14,7 +14,7 @@ struct ListPosition: View{
     
     init(item: ItemViewModel, textInput: String) {
         self.item = item
-        self.textInput = textInput
+        self.textInput = textInput.lowercased()
     }
     
     func getText() -> Text {

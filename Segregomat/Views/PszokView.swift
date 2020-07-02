@@ -44,11 +44,8 @@ struct PszokView_Previews: PreviewProvider {
 
 struct PszokButton: View {
     var body: some View {
-        
-        Button(action: {
-            print("Hello World tapped!")
-        }) {
-            Text("ZNAJDŹ SWÓJ\nPSZOK").padding([.leading, .trailing], 40.0).padding([.top, .bottom],15).background(ButtonOutline()).font(.custom("Rubik-Bold", size: 17)).foregroundColor(.black).multilineTextAlignment(.center)
+        NavigationLink(destination: PszokMapView()) {
+                Text("ZNAJDŹ SWÓJ\nPSZOK").padding([.leading, .trailing], 40.0).padding([.top, .bottom],15).background(ButtonOutline()).font(.custom("Rubik-Bold", size: 17)).foregroundColor(.black).multilineTextAlignment(.center)
         }
     }
 }
