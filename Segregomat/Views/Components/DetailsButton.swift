@@ -9,32 +9,47 @@
 import SwiftUI
 
 struct DetailsButton: View {
-    @State var isDetailsActive = false
-//    var betterOptionButtonText = "MOŻNA LEPIEJ?"
-    var details: String
-    
-    init(details: String, isDetailsActive: Bool) {
-        self.details = details
-        self.isDetailsActive = isDetailsActive
+
+
+    @Binding var isDetailsActive: Bool
+    @Binding var details: String
+    @ObservedObject var detailsViewModel: DetailsViewModel
+
+    init(isDetailsActive: Binding<Bool>, details: Binding<String>){
+        self._isDetailsActive = isDetailsActive
+        self._details = details
+        self.detailsViewModel = DetailsViewModel(details: details.wrappedValue)
     }
-    
+
     var body: some View {
-        Button(action: {
-            withAnimation {
+
+        ZStack {
+            if(!self.isDetailsActive) {
+                Text("MOŻNA LEPIEJ?").font(.custom("Rubik-Bold", size: 17)).foregroundColor(.black).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+            } else {
+                ScrollView {
+                    ForEach(detailsViewModel.getTexts(sourceText: details, texts: [TextResult]())) { (text) in
+                        if(text.isURL) {
+                            Button(action: {
+                                self.detailsViewModel.openURL(textUrl: text.text)
+                                self.isDetailsActive.toggle()
+                            }) {
+                                Text(text.text).underline().padding(0).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            }
+                        } else {
+                            Text(text.text).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                    .padding([.leading, .trailing], 15).padding([.top, .bottom],25).font(.custom("Rubik-Light", size: 17)).foregroundColor(.black)
+
+
+                }
+            }
+        }.background(DetailsButtonOutline(gap: !self.isDetailsActive ? 3 : 5)).onTapGesture {
+            withAnimation(.linear(duration: 0.25)) {
                 self.isDetailsActive.toggle()
             }
-        }) {
-            ZStack {
-                if(!self.isDetailsActive) {
-                    Text("MOŻNA LEPIEJ?").padding([.leading, .trailing], 15).padding([.top, .bottom],25).font(.custom("Rubik-Bold", size: 17)).foregroundColor(.black)
-                } else {
-                    ScrollView {
-                        Text(details).padding([.leading, .trailing], 15).padding([.top, .bottom],25).font(.custom("Rubik-Light", size: 17)).foregroundColor(.black)
-                    }
-                }
-            }.background(DetailsButtonOutline(gap: !self.isDetailsActive ? 3 : 5))
-                //.transition(.move(edge: .top)).animation(.linear)
-        }.padding()
+        }
     }
 }
 
@@ -61,6 +76,11 @@ struct DetailsButtonOutline: View {
     init(gap: CGFloat) {
         self.gap = gap
     }
+
+    init() {
+        self.gap = 3
+    }
+
     var body: some View {
         DetailsShape(gap: gap).stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.black).cornerRadius(1).frame(alignment: .center)
     }
@@ -85,7 +105,7 @@ struct DetailsShape: Shape {
         path.addLine(to: CGPoint(x: 0, y: h))
         path.addLine(to: CGPoint(x: 0, y: 0))
 
-                
+
         return path
     }
 }

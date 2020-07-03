@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ClassifiedView: View {
     private let category: String
-    private let details: String
-    var categoryLabel: String
+    @State var details: String = ""
+    var categoryLabel: String = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var isDetailsActive = false
 
@@ -23,7 +23,7 @@ struct ClassifiedView: View {
     
     init(item: Item) {
         self.category = item.category
-        self.details = item.details
+        self._details = State(wrappedValue: item.details)
         switch self.category {
             case "plastic":
                 categoryLabel = "PLASTIK I METAL"
@@ -53,8 +53,8 @@ struct ClassifiedView: View {
                         }.animation(.easeInOut)
                             Spacer()
                     }
-                     
-                    DetailsButton(details: details, isDetailsActive: isDetailsActive)
+
+                    DetailsButton(isDetailsActive: $isDetailsActive, details: $details).frame(maxWidth: !isDetailsActive ? 170 : .infinity, maxHeight: !isDetailsActive ? 70 : .infinity).padding()
                     
                     Spacer()
                  }.navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode), trailing: OptionButton()).navigationBarTitle("SEGREGOMAT", displayMode: .inline)

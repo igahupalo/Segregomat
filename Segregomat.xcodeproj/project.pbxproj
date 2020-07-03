@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		156258AE57EB8715FA9F9510 /* Pods_SegregomatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF0BFB1A537E5C6A7796F51 /* Pods_SegregomatTests.framework */; };
 		167953E5DF1B28F16A2A3C8E /* Pods_Segregomat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EBD5AFA11E877EAA2A011D /* Pods_Segregomat.framework */; };
+		422C02A424AE37D10005B7E9 /* PszokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C02A324AE37D10005B7E9 /* PszokButton.swift */; };
+		422C02A624AF1A890005B7E9 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C02A524AF1A890005B7E9 /* DetailsViewModel.swift */; };
+		422C02A824AF1B680005B7E9 /* TextResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C02A724AF1B680005B7E9 /* TextResult.swift */; };
 		423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423356B92460CCF600331EBB /* AuthorsView.swift */; };
 		423FD6CF24A616DC001CA36A /* launchScreenAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 423FD6CE24A616DB001CA36A /* launchScreenAnimation.gif */; };
 		425CA64124A94539008FF4C2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CA64024A94539008FF4C2 /* Item.swift */; };
@@ -98,6 +101,9 @@
 		1BF0BFB1A537E5C6A7796F51 /* Pods_SegregomatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SegregomatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24D23AAA31F21F5FB7682BF7 /* Pods_Segregomat_SegregomatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Segregomat_SegregomatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF1426599407E9006E6E433 /* Pods-Segregomat-SegregomatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segregomat-SegregomatUITests.debug.xcconfig"; path = "Target Support Files/Pods-Segregomat-SegregomatUITests/Pods-Segregomat-SegregomatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		422C02A324AE37D10005B7E9 /* PszokButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PszokButton.swift; sourceTree = "<group>"; };
+		422C02A524AF1A890005B7E9 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		422C02A724AF1B680005B7E9 /* TextResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResult.swift; sourceTree = "<group>"; };
 		423356B92460CCF600331EBB /* AuthorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsView.swift; sourceTree = "<group>"; };
 		423FD6CE24A616DB001CA36A /* launchScreenAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launchScreenAnimation.gif; sourceTree = "<group>"; };
 		425CA64024A94539008FF4C2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 				425CA64024A94539008FF4C2 /* Item.swift */,
 				425CA64924AA0E37008FF4C2 /* Session.swift */,
 				425CA65624AC8E03008FF4C2 /* Pszok.swift */,
+				422C02A724AF1B680005B7E9 /* TextResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 				4284F07624A7FFEF00DB4978 /* MainViewModel.swift */,
 				4284F07824A8001700DB4978 /* ClassifiedViewModel.swift */,
 				425CA65424AC88BE008FF4C2 /* PszokMapViewModel.swift */,
+				422C02A524AF1A890005B7E9 /* DetailsViewModel.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 				425CA64324A949BC008FF4C2 /* Components.swift */,
 				425CA64E24ABC931008FF4C2 /* ListPosition.swift */,
 				425CA65024ABE8A4008FF4C2 /* DetailsButton.swift */,
+				422C02A324AE37D10005B7E9 /* PszokButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -656,10 +665,12 @@
 				42959B4B24621A3D00DA859C /* PszokView.swift in Sources */,
 				4284F07324A7FF9500DB4978 /* ItemViewModel.swift in Sources */,
 				425CA64124A94539008FF4C2 /* Item.swift in Sources */,
+				422C02A424AE37D10005B7E9 /* PszokButton.swift in Sources */,
 				425CA64424A949BC008FF4C2 /* Components.swift in Sources */,
 				42D04588245E2457001CAB56 /* ClassifiedView.swift in Sources */,
 				425CA64A24AA0E37008FF4C2 /* Session.swift in Sources */,
 				425CA65724AC8E03008FF4C2 /* Pszok.swift in Sources */,
+				422C02A624AF1A890005B7E9 /* DetailsViewModel.swift in Sources */,
 				423356BA2460CCF600331EBB /* AuthorsView.swift in Sources */,
 				42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */,
 				425CA64F24ABC931008FF4C2 /* ListPosition.swift in Sources */,
@@ -672,6 +683,7 @@
 				4284F07924A8001700DB4978 /* ClassifiedViewModel.swift in Sources */,
 				42959B4D246220FF00DA859C /* UnclassifiedView.swift in Sources */,
 				42D0452F245DF3C9001CAB56 /* MainView.swift in Sources */,
+				422C02A824AF1B680005B7E9 /* TextResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

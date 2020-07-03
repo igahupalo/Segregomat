@@ -42,7 +42,7 @@ struct Item: Identifiable {
         self.ref = snapshot.ref
         self.key = snapshot.key
         self.id = snapshot.key
-        self.name = name
+        self.name = name.lowercased()
         self.category = category
         self.details = details
     }

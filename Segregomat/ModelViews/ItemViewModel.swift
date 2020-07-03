@@ -21,7 +21,7 @@ class ItemViewModel: Identifiable {
     func getDestination() -> some View {
         switch self.item.category {
         case "pszok":
-            return AnyView(PszokView())
+            return AnyView(PszokView(item: self.item))
         default:
             return AnyView(ClassifiedView(item: self.item))
         }
