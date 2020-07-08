@@ -10,36 +10,47 @@ import SwiftUI
 import SSSwiftUIGIFView
 
 struct MainView: View {
-    @ObservedObject var model = MainViewModel()
-    @ObservedObject var itemListViewModel = ItemListViewModel()
-    @ObservedObject var scannerViewModel = ScannerViewModel()
-
-
+    @EnvironmentObject var session: FirebaseSession
     @State private var textInput = ""
-    let searchFieldHint = "wyszukaj swój śmieć..."
     @State private var isSearchFieldEdited = false
-    @State private var isLaunchScreenOn = true;
-    
-    init() {
-        
-    }
-    
-    var body: some View {
+    @State private var animationState: AnimationState = .launching
+    @State private var chosenItem: Item? = nil
+    @State private var isLoaded = false
 
+    let searchFieldHint = "wyszukaj swój śmieć..."
+
+    var body: some View {
+        
         NavigationView {
             ZStack {
                 Color("colorBackground").edgesIgnoringSafeArea(.all)
-                if(isLaunchScreenOn) {
-                    SwiftUIGIFPlayerView(gifName: "launchScreenAnimation").onAppear(perform: performAnim).navigationBarTitle("").navigationBarHidden(true).aspectRatio(contentMode: .fit).frame(width: 375, height: 667, alignment: .center)
+
+                self.chosenItem.map { chosenItem in
+                    NavigationLink(destination: self.chosenItem!.category == "pszok" ? AnyView(PszokView(item: self.chosenItem!)) : AnyView(ClassifiedView(item: self.chosenItem!)), isActive: $isLoaded) {
+                        EmptyView()
+                    }
+                }
+
+                if(animationState != .none) {
+                    SwiftUIGIFPlayerView(gifName: animationState == .launching ? "animationTitled" : "animation")
+                        .onAppear(perform: performAnim)
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 375, height: 667, alignment: .center)
                 } else {
                     VStack(alignment: .center) {
+
                         Spacer()
                         ListOutline().overlay(
                             VStack(alignment: .trailing, spacing: 0) {
                                 SearchOutline().overlay(
                                     HStack(alignment: .center, spacing: 0) {
                                         ZStack(alignment: .leading) {
-                                            Text(textInput == "" && isSearchFieldEdited == false ? searchFieldHint : "").font(.custom("Rubik-Medium", size: 20)).foregroundColor(.black).padding(0)
+                                            Text(textInput == "" && isSearchFieldEdited == false ? searchFieldHint : "")
+                                                .font(.custom("Rubik-Medium", size: 20))
+                                                .foregroundColor(.black)
+                                                .padding(0)
                                             
                                             TextField("", text: $textInput, onEditingChanged: {
                                                 (editingChanged) in if editingChanged {
@@ -47,9 +58,10 @@ struct MainView: View {
                                                 } else {
                                                     self.isSearchFieldEdited = false
                                                 }
+                                                
+                                            }).font(.custom("Rubik-Medium", size: 20))
+                                                .autocapitalization(.none)
                                             
-                                            }).font(.custom("Rubik-Medium", size: 20)).autocapitalization(.none)
-                                        
                                             
                                         }
                                     }
@@ -57,24 +69,26 @@ struct MainView: View {
                                 
                                 ScrollView(showsIndicators: false) {
                                     VStack{
-
-                                        ForEach(itemListViewModel.getMatchingItems(textInput: textInput)) { (item) in
-                                            ListPosition(item: item, textInput: self.textInput)
+                                        
+                                        ForEach(getMatchingItems(textInput: textInput)) { (item) in
+                                            ListPosition(item: item, textInput: self.textInput, animationState: self.$animationState, chosenItem: self.$chosenItem)
                                         }
                                         HStack {
                                             Spacer()
                                         }
                                     }.padding([.top], 5)
-                                }.frame(minWidth: 100, maxWidth: .infinity, alignment: .leading).padding([.leading], 30).padding([.top], 0)
-                            },
-                            alignment: .topTrailing
+                                }.frame(minWidth: 100, maxWidth: .infinity, alignment: .leading)
+                                    .padding([.leading], 30)
+                                    .padding([.top], 0)
+                            }, alignment: .topTrailing
                         )
                         
                         Spacer()
                         
                         VStack(spacing: 30) {
                             NavigationLink(destination: ScannerView()) {
-                                Text("zeskanuj").padding([.leading, .trailing], 40.0)
+                                Text("zeskanuj")
+                                    .padding([.leading, .trailing], 40.0)
                                     .padding([.top, .bottom], 10)
                                     .background(ButtonOutline())
                                     .font(.custom("Rubik-Medium", size: 20))
@@ -85,62 +99,91 @@ struct MainView: View {
                         }
                         
                         Spacer()
-
-                    }.navigationBarTitle("SEGREGOMAT", displayMode: .inline).navigationBarItems(trailing: OptionButton()).accentColor(.black)
+                        
+                    }.navigationBarTitle("SEGREGOMAT", displayMode: .inline)
+                        .navigationBarItems(trailing: OptionButton())
+                        .accentColor(.black)
                 }
-            }
-
+            }.onDisappear(perform: {
+                self.animationState = .none
+            })
+            
         }.dismissKeyboardOnTap()
-        
+    }
+
+    private func performAnim() {
+        if(self.animationState == .launching) {
+            self.session.getItems()
+            self.session.getPszoks()
+            self.session.getBarcodes()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.animationState = .none
+            }
+        } else if(self.animationState == .loading) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.isLoaded.toggle()
+            }
+        }
     }
     
-    private func performAnim() {
-        itemListViewModel.fetchItems()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.isLaunchScreenOn = false
+    private func getMatchingItems(textInput: String) -> [Item] {
+        var itemList = [Item]()
+        for item in session.items {
+            if(item.name.contains(textInput.lowercased())) {
+                itemList.append(item)
+            }
         }
+        
+        for child in itemList {
+            print(child.name)
+        }
+        
+        return itemList
     }
 }
 
-struct ListShape: Shape {
+enum AnimationState {
+    case launching, loading, none
+}
+
+private struct ListShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let w = rect.size.width
         let h = rect.size.height
-
+        
         path.move(to: CGPoint(x: 1.5 * w / 16, y: 0))
         path.addLine(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: 0, y: h))
         path.addLine(to: CGPoint(x: w, y: h))
         path.addLine(to: CGPoint(x: w, y: 5 * h / 16))
-
+        
         return path
     }
 }
 
-struct ListOutline: View {
+private struct ListOutline: View {
     var body: some View {
         ListShape().stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.black).cornerRadius(1).frame(width: 327, height: 327, alignment: .center)
     }
 }
 
-struct SearchShape: Shape {
+private struct SearchShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let w = rect.size.width
         let h = rect.size.height
-
+        
         path.move(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: w, y: 0))
         path.addLine(to: CGPoint(x: w, y: h))
         path.addLine(to: CGPoint(x: 0, y: h))
-
+        
         return path
     }
 }
 
-struct SearchOutline: View {
+private struct SearchOutline: View {
     var body: some View {
         SearchShape().stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.black).cornerRadius(1).frame(width: 296.34375, height: 51.09375, alignment: .center)
     }

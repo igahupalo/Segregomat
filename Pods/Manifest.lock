@@ -76,6 +76,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
   - leveldb-library (1.22)
+  - lottie-ios (3.1.8)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
+  - lottie-ios
   - SSSwiftUIGIFView
   - SwiftGifOrigin
   - SwiftyGif
@@ -110,6 +112,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - SSSwiftUIGIFView
@@ -130,12 +133,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   SSSwiftUIGIFView: f109262cd0baff190b58b519c0e94f7622c428d4
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
 
-PODFILE CHECKSUM: d2f6e89173530238fdd7392e50ca3ba2dfe602dd
+PODFILE CHECKSUM: d142610d92c1e51fb5c2a79799d808edb6f51f4d
 
 COCOAPODS: 1.8.4

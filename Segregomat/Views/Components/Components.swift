@@ -67,7 +67,9 @@ struct BackButton: View {
             self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {
-                Image(self.icon == .arrow ? "backIcon" : "crossIcon").foregroundColor(self.color).padding([.top, .bottom, .trailing], 15)
+                Image(self.icon == .arrow ? "backIcon" : "crossIcon")
+                    .foregroundColor(self.color)
+                    .padding([.top, .bottom, .trailing], 15)
             }
         }
     }

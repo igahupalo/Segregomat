@@ -13,10 +13,22 @@ struct UnclassifiedView: View {
     var body: some View {
         ZStack {
             Color("colorBackground").edgesIgnoringSafeArea(.all)
+
             VStack(alignment: .center, spacing: 20) {
-                Text("segregomacie,\nnajpiękniejszy w świecie!\nczemu nie wiesz,\ngdzie wrzucić moje śmiecie…").font(.custom("Rubik-BoldItalic", size: 17)).multilineTextAlignment(.center)
-                Text("produkt zostanie dodany\ndo bazy").font(.custom("Rubik-Light", size: 17)).multilineTextAlignment(.center)
-            }.navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode)).navigationBarItems(leading: BackButton(presentationMode: presentationMode), trailing: OptionButton()).navigationBarTitle("SEGREGOMAT", displayMode: .inline)
+
+                Text("segregomacie,\nnajpiękniejszy w świecie!\nczemu nie wiesz,\ngdzie wrzucić moje śmiecie…")
+                    .font(.custom("Rubik-BoldItalic", size: 17))
+                    .multilineTextAlignment(.center)
+
+                Text("produkt zostanie dodany\ndo bazy")
+                    .font(.custom("Rubik-Light", size: 17))
+                    .multilineTextAlignment(.center)
+
+            }.navigationBarBackButtonHidden(true)
+                .navigationBarItems(
+                    leading: BackButton(presentationMode: presentationMode),
+                    trailing: OptionButton())
+                .navigationBarTitle("SEGREGOMAT", displayMode: .inline)
         }
     }
 }

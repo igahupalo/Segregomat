@@ -8,54 +8,91 @@
 
 import SwiftUI
 import AVFoundation
-
+import SSSwiftUIGIFView
 
 struct ScannerView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var scannerViewModel = ScannerViewModel()
-    @State var scannedItem: ItemViewModel?
+    @State var scannedItem: Item?
     @State var isScannerInactive = false
-
-
     @State var barcodeValue = ""
     @State var torchIsOn = false
-
+    @State private var animationState: AnimationState = .none
+    @EnvironmentObject var session: FirebaseSession
+    
     init() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().tintColor = .clear
         UINavigationBar.appearance().backgroundColor = .clear
-
-        scannerViewModel.fetchItems()
     }
-
+    
     func torchToggle() {
         self.torchIsOn.toggle()
     }
-
+    
     var body: some View {
         ZStack {
-            Scanner(supportBarcode: [.ean13, .ean8]).interval(delay: 1.0).found{
-                if(!self.isScannerInactive) {
-                    self.scannedItem = self.scannerViewModel.getMatchingItem(scanned: $0)
-                    self.barcodeValue = $0
-                    self.isScannerInactive.toggle()
-                }
-            }.torchLight(isOn: self.torchIsOn)
+            Color("colorBackground").edgesIgnoringSafeArea(.all)
 
-            NavigationLink(destination: $scannedItem.wrappedValue == nil ? AnyView(UnclassifiedView()) : AnyView($scannedItem.wrappedValue!.getDestination()), isActive: $isScannerInactive) {
-                EmptyView()
+
+            if(animationState == .none) {
+
+                Scanner(supportBarcode: [.ean13, .ean8]).interval(delay: 1.0).found{
+                    if(!self.isScannerInactive) {
+                        self.scannedItem = self.getMatchingItem(scanned: $0)
+                        self.barcodeValue = $0
+                        self.animationState = .loading
+                    }
+                }.torchLight(isOn: self.torchIsOn)
+
+                NavigationLink(destination: $scannedItem.wrappedValue == nil ? AnyView(UnclassifiedView()) : ($scannedItem.wrappedValue!.category == "pszok" ? AnyView(PszokView(item: self.$scannedItem.wrappedValue!)) : AnyView(ClassifiedView(item: self.$scannedItem.wrappedValue!))), isActive: $isScannerInactive) {
+                    EmptyView()
+                }
             }
 
-        }.edgesIgnoringSafeArea(.all).navigationBarBackButtonHidden(true).navigationBarTitle("")
+            else if(animationState == .loading) {
+                SwiftUIGIFPlayerView(gifName: "animation")
+                    .onAppear(perform: performAnim)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 360, height: 641, alignment: .center)
+            }
+
+        }.edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
             .navigationBarItems(
                 leading: BackButton(presentationMode: presentationMode, icon: .cross, color: .white).accentColor(Color.white).shadow(color: Color.black, radius: 1, x: 0, y: 2),
                 trailing: Button(action: {self.torchToggle()}) {
-                    //Image(systemName: self.torchIsOn ? "bolt.slash.fill" : "bolt.fill").foregroundColor(.white).padding([.top, .bottom, .trailing], 15).shadow(color: Color.black, radius: 1, x: 0, y: 2)
                     Image(torchIsOn ? "boltIconFilled" : "boltIcon").foregroundColor(.white).padding([.top, .bottom, .leading], 15).shadow(color: Color.black, radius: 1, x: 0, y: 2)
+            })
+    }
+
+    private func performAnim() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.isScannerInactive = true
+            self.animationState = .none
+        }
+    }
+    
+    private func getMatchingItem(scanned: String) -> Item? {
+        var matchingItem: Item?
+        for barcode in session.barcodes {
+            if(String(barcode.code) == scanned) {
+                let id = barcode.id
+                for item in session.items {
+                    if(item.id == id) {
+                        matchingItem = item
+                        break;
+                    }
                 }
-            )
+                break;
+            }
+        }
+        
+        return matchingItem
     }
 }
 

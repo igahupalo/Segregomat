@@ -9,17 +9,37 @@
 import SwiftUI
 
 struct ListPosition: View{
-    let item: ItemViewModel
-    let textInput: String
+    @EnvironmentObject var session: FirebaseSession
+    @Binding var animationState: AnimationState
+    @Binding var chosenItem: Item?
     
-    init(item: ItemViewModel, textInput: String) {
+    let item: Item
+    let textInput: String
+
+    
+    init(item: Item, textInput: String, animationState: Binding<AnimationState>, chosenItem: Binding<Item?>) {
         self.item = item
         self.textInput = textInput.lowercased()
+        self._animationState = animationState
+        self._chosenItem = chosenItem
     }
-    
+
+    var body: some View {
+
+        Button(action: {
+            self.chosenItem = self.item
+            self.animationState = .loading
+        }) {
+            getText()
+                .foregroundColor(.black)
+                .padding([.trailing, .top, .bottom], 8)
+                .frame(minWidth: 100, maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
     func getText() -> Text {
         var text = Text("")
-        let name = item.item.name.lowercased()
+        let name = item.name.lowercased()
         let splits = name.components(separatedBy: textInput).flatMap { [$0, textInput] }.dropLast().filter { $0 != "" }
         
         for split in splits {
@@ -31,10 +51,20 @@ struct ListPosition: View{
         }
         return text
     }
-    
-    var body: some View {
-        NavigationLink(destination: item.getDestination()) {
-            getText().foregroundColor(.black).padding([.trailing, .top, .bottom], 8).frame(minWidth: 100, maxWidth: .infinity, alignment: .leading)
+
+    func getMatchingItems(textInput: String) -> [Item] {
+        var itemList = [Item]()
+        for item in session.items {
+            if(item.name.contains(textInput.lowercased())) {
+                itemList.append(item)
+            }
         }
+
+        for child in itemList {
+            print(child.name)
+        }
+
+        return itemList
     }
+
 }

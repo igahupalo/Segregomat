@@ -17,7 +17,7 @@ struct Item: Identifiable {
     let details: String
     let ref: DatabaseReference?
     
-    init(key: String = "", name: String, category: String, details: String = "") {
+    init(key: String = "", name: String = "", category: String = "", details: String = "") {
         self.key = key
         self.id = key
         self.name = name
@@ -25,11 +25,7 @@ struct Item: Identifiable {
         self.details = details
         self.ref = nil
     }
-    
-    enum Category: String {
-        case plastic, paper, mixed, bio, pszok, glass, unclassified
-    }
-    
+
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String: AnyObject],
@@ -57,35 +53,5 @@ struct Item: Identifiable {
     
     public var description: String {
         return "Name: \(name)\nCategory: \(category)\n"
-    }
-}
-
-
-struct Barcode: Identifiable {
-    let key: String
-    let id: String
-    let item: String
-    let code: Int
-    let ref: DatabaseReference?
-
-    init?(snapshot: DataSnapshot) {
-        guard
-            let value = snapshot.value as? [String: AnyObject],
-            let item = value["item"]  as AnyObject? as? String,
-            let code = value["code"] as AnyObject? as? Int                                                                                      ,
-            let id = value["id"] as AnyObject? as? Int
-
-        else {
-            return nil
-        }
-        self.ref = snapshot.ref
-        self.key = snapshot.key
-        self.id = String(id)
-        self.item = item.lowercased()
-        self.code = code
-    }
-
-    public var description: String {
-        return "Name: \(item)\nCode: \(code)\n"
     }
 }

@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ClassifiedView: View {
     private let category: String
-    @State var details: String = ""
     var categoryLabel: String = ""
+    @State var details: String = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var isDetailsActive = false
-
+    
     init() {
         self.category = "mixed"
         self.details = "details"
@@ -25,39 +25,49 @@ struct ClassifiedView: View {
         self.category = item.category
         self._details = State(wrappedValue: item.details)
         switch self.category {
-            case "plastic":
-                categoryLabel = "PLASTIK I METAL"
-            case "glass":
-                categoryLabel = "SZKŁO"
-            case "paper":
-                categoryLabel = "PAPIER"
-            case "bio":
-                categoryLabel = "BIO"
-            default:
-                categoryLabel = "ZMIESZANE"
+        case "plastic":
+            categoryLabel = "PLASTIK I METAL"
+        case "glass":
+            categoryLabel = "SZKŁO"
+        case "paper":
+            categoryLabel = "PAPIER"
+        case "bio":
+            categoryLabel = "BIO"
+        default:
+            categoryLabel = "ZMIESZANE"
         }
     }
-
+    
     var body: some View {
         
         ZStack {
-            Color("colorBackground").edgesIgnoringSafeArea(.all)
-
-                VStack(alignment: .center) {
-                    if(!self.isDetailsActive) {
-                        Spacer()
-
-                        VStack {
-                            Image(category)
-                            Text(categoryLabel).font(.custom("Rubik-Bold", size: 20))
-                        }.animation(.easeInOut)
-                            Spacer()
-                    }
-
-                    DetailsButton(isDetailsActive: $isDetailsActive, details: $details).frame(maxWidth: !isDetailsActive ? 170 : .infinity, maxHeight: !isDetailsActive ? 70 : .infinity).padding()
-                    
+            Color("colorBackground")
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center) {
+                if(!self.isDetailsActive) {
                     Spacer()
-                 }.navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode), trailing: OptionButton()).navigationBarTitle("SEGREGOMAT", displayMode: .inline)
+                    
+                    VStack {
+                        Image(category)
+                        Text(categoryLabel)
+                            .font(.custom("Rubik-Bold", size: 20))
+                    }.animation(.easeInOut)
+
+                    Spacer()
+                }
+                
+                DetailsButton(isDetailsActive: $isDetailsActive, details: $details)
+                    .frame(maxWidth: !isDetailsActive ? 170 : .infinity, maxHeight: !isDetailsActive ? 70 : .infinity)
+                    .padding()
+                
+                Spacer()
+                
+            }.navigationBarBackButtonHidden(true)
+                .navigationBarItems(
+                    leading: BackButton(presentationMode: presentationMode),
+                    trailing: OptionButton())
+                .navigationBarTitle("SEGREGOMAT", displayMode: .inline)
         }
     }
 }

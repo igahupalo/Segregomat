@@ -9,6 +9,7 @@ target 'Segregomat' do
   pod 'SwiftGifOrigin'
   pod 'SSSwiftUIGIFView'
   pod 'SwiftyGif'
+  pod 'lottie-ios'
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'

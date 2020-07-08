@@ -13,7 +13,11 @@ struct PszokButton: View {
     var body: some View {
         NavigationLink(destination: PszokMapView()) {
             Text("ZNAJDŹ SWÓJ\nPSZOK")
-                .font(.custom("Rubik-Bold", size: 17)).foregroundColor(.black).multilineTextAlignment(.center).frame(minWidth: 0, maxWidth: .infinity,  minHeight: 0, maxHeight: .infinity, alignment: .center).background(DetailsButtonOutline())
+                .font(.custom("Rubik-Bold", size: 17))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+                .frame(minWidth: 0, maxWidth: .infinity,  minHeight: 0, maxHeight: .infinity, alignment: .center)
+                .background(DetailsButtonOutline())
         }
     }
 }

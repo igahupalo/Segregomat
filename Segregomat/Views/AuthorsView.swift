@@ -16,7 +16,9 @@ struct AuthorsView: View {
             Color("colorBackground").edgesIgnoringSafeArea(.all)
             
             AuthorsText().frame(alignment: .top)
-         }.navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode)).navigationBarTitle("SEGREGOMAT", displayMode: .inline)
+         }.navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton(presentationMode: presentationMode))
+            .navigationBarTitle("SEGREGOMAT", displayMode: .inline)
         
     }
 }
@@ -32,33 +34,48 @@ struct AuthorsText: View {
             
             VStack(alignment: .center, spacing: 20) {
                 VStack(alignment: .center, spacing: 0) {
-                    Text("POMYSŁ I DESIGN").font(.custom("Rubik-Bold", size: 14))
-                    Text("Anna Ludwin").font(.custom("Rubik-Regular", size: 14))
+                    Text("POMYSŁ I DESIGN")
+                        .font(.custom("Rubik-Bold", size: 14))
+                    Text("Anna Ludwin")
+                        .font(.custom("Rubik-Regular", size: 14))
                 }
+
                 VStack(alignment: .center, spacing: 0) {
 
-                    Text("PROGRAMIŚCI IOS").font(.custom("Rubik-Bold", size: 14))
-                    Text("Kinga Gniedziejko\nIga Hupało\nJan Mielniczuk").font(.custom("Rubik-Regular", size: 14))
+                    Text("PROGRAMIŚCI IOS")
+                        .font(.custom("Rubik-Bold", size: 14))
+                    Text("Kinga Gniedziejko\nIga Hupało\nJan Mielniczuk")
+                        .font(.custom("Rubik-Regular", size: 14))
                         .multilineTextAlignment(.center)
                 }
+
                 VStack(alignment: .center, spacing: 0) {
-                    Text("PROGRAMIŚCI ANDROID").font(.custom("Rubik-Bold", size: 14))
-                    Text("Kacper Kiedos\nPaweł Klecha").font(.custom("Rubik-Regular", size: 14))
+                    Text("PROGRAMIŚCI ANDROID")
+                        .font(.custom("Rubik-Bold", size: 14))
+                    Text("Kacper Kiedos\nPaweł Klecha")
+                        .font(.custom("Rubik-Regular", size: 14))
                         .multilineTextAlignment(.center)
                 }
+
                 VStack(alignment: .center, spacing: 0) {
 
-                    Text("PROMOTORZY").font(.custom("Rubik-Bold", size: 14))
-                    Text("Marek Rybicki\nMaja Wolińska\nAleksandra Trojanowska").font(.custom("Rubik-Regular", size: 14))
+                    Text("PROMOTORZY")
+                        .font(.custom("Rubik-Bold", size: 14))
+                    Text("Marek Rybicki\nMaja Wolińska\nAleksandra Trojanowska")
+                        .font(.custom("Rubik-Regular", size: 14))
                         .multilineTextAlignment(.center)
                     
                 }
+
                 VStack(alignment: .center, spacing: 0) {
-                    Text("POMOC TECHNICZNA").font(.custom("Rubik-Bold", size: 14))
-                    Text("Krzysztof Waśko").font(.custom("Rubik-Regular", size: 14))
+                    Text("POMOC TECHNICZNA")
+                        .font(.custom("Rubik-Bold", size: 14))
+                    Text("Krzysztof Waśko")
+                        .font(.custom("Rubik-Regular", size: 14))
                 }
 
-                Text("ASP Wrocław\n2020").font(.custom("Rubik-Bold", size: 14))
+                Text("ASP Wrocław\n2020")
+                    .font(.custom("Rubik-Bold", size: 14))
                     .multilineTextAlignment(.center)
             }
 
