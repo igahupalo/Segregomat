@@ -12,10 +12,11 @@ import SwiftUI
 class ItemListViewModel: ObservableObject {
     @Published var items = [Item]()
     @ObservedObject var session = FirebaseSession()
+//    @EnvironmentObject var session: FirebaseSession
 
     
     func fetchItems() {
-        session.getItems(itemListViewModel: self)
+        self.session.getItems(itemListViewModel: self)
     }
     
     func getMatchingItems(textInput: String) -> [ItemViewModel] {

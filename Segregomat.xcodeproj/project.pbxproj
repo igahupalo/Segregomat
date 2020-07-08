@@ -33,6 +33,9 @@
 		4284F07C24A802CA00DB4978 /* NavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284F07B24A802CA00DB4978 /* NavigationController+Ext.swift */; };
 		42959B4B24621A3D00DA859C /* PszokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4A24621A3D00DA859C /* PszokView.swift */; };
 		42959B4D246220FF00DA859C /* UnclassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42959B4C246220FF00DA859C /* UnclassifiedView.swift */; };
+		42B02F1724B12856002ED2C4 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B02F1624B12856002ED2C4 /* ScannerView.swift */; };
+		42B02F1E24B129AA002ED2C4 /* PszokViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B02F1D24B129AA002ED2C4 /* PszokViewController.swift */; };
+		42B02F2124B1E28A002ED2C4 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B02F2024B1E28A002ED2C4 /* ScannerViewModel.swift */; };
 		42D0452B245DF3C9001CAB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452A245DF3C9001CAB56 /* AppDelegate.swift */; };
 		42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */; };
 		42D0452F245DF3C9001CAB56 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0452E245DF3C9001CAB56 /* MainView.swift */; };
@@ -123,6 +126,9 @@
 		4284F07B24A802CA00DB4978 /* NavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Ext.swift"; sourceTree = "<group>"; };
 		42959B4A24621A3D00DA859C /* PszokView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PszokView.swift; sourceTree = "<group>"; };
 		42959B4C246220FF00DA859C /* UnclassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnclassifiedView.swift; sourceTree = "<group>"; };
+		42B02F1624B12856002ED2C4 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		42B02F1D24B129AA002ED2C4 /* PszokViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PszokViewController.swift; sourceTree = "<group>"; };
+		42B02F2024B1E28A002ED2C4 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		42D04527245DF3C9001CAB56 /* Segregomat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segregomat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D0452A245DF3C9001CAB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D0452C245DF3C9001CAB56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		4284F06D24A7FEE200DB4978 /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
+				42B02F2024B1E28A002ED2C4 /* ScannerViewModel.swift */,
 				4284F07224A7FF9500DB4978 /* ItemViewModel.swift */,
 				4284F07424A7FFA400DB4978 /* ItemListViewModel.swift */,
 				4284F07624A7FFEF00DB4978 /* MainViewModel.swift */,
@@ -258,6 +265,7 @@
 		4284F06E24A7FEF000DB4978 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42B02F1624B12856002ED2C4 /* ScannerView.swift */,
 				4284F06F24A7FF0D00DB4978 /* Components */,
 				42D0452E245DF3C9001CAB56 /* MainView.swift */,
 				42D04587245E2457001CAB56 /* ClassifiedView.swift */,
@@ -265,6 +273,7 @@
 				42959B4A24621A3D00DA859C /* PszokView.swift */,
 				42959B4C246220FF00DA859C /* UnclassifiedView.swift */,
 				425CA65224AC8602008FF4C2 /* PszokMapView.swift */,
+				42B02F1D24B129AA002ED2C4 /* PszokViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -666,6 +675,7 @@
 				4284F07324A7FF9500DB4978 /* ItemViewModel.swift in Sources */,
 				425CA64124A94539008FF4C2 /* Item.swift in Sources */,
 				422C02A424AE37D10005B7E9 /* PszokButton.swift in Sources */,
+				42B02F2124B1E28A002ED2C4 /* ScannerViewModel.swift in Sources */,
 				425CA64424A949BC008FF4C2 /* Components.swift in Sources */,
 				42D04588245E2457001CAB56 /* ClassifiedView.swift in Sources */,
 				425CA64A24AA0E37008FF4C2 /* Session.swift in Sources */,
@@ -677,6 +687,7 @@
 				425CA65524AC88BE008FF4C2 /* PszokMapViewModel.swift in Sources */,
 				4284F07524A7FFA400DB4978 /* ItemListViewModel.swift in Sources */,
 				42D0452D245DF3C9001CAB56 /* SceneDelegate.swift in Sources */,
+				42B02F1E24B129AA002ED2C4 /* PszokViewController.swift in Sources */,
 				4284F07C24A802CA00DB4978 /* NavigationController+Ext.swift in Sources */,
 				4284F07724A7FFEF00DB4978 /* MainViewModel.swift in Sources */,
 				425CA65324AC8602008FF4C2 /* PszokMapView.swift in Sources */,
@@ -684,6 +695,7 @@
 				42959B4D246220FF00DA859C /* UnclassifiedView.swift in Sources */,
 				42D0452F245DF3C9001CAB56 /* MainView.swift in Sources */,
 				422C02A824AF1B680005B7E9 /* TextResult.swift in Sources */,
+				42B02F1724B12856002ED2C4 /* ScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

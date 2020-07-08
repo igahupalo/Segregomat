@@ -12,8 +12,7 @@ import SwiftUI
 extension UINavigationController: UIGestureRecognizerDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        //określenie stylu bara
+
         let standardAppearance = UINavigationBarAppearance()
         standardAppearance.configureWithTransparentBackground()
         standardAppearance.titleTextAttributes = [.font : UIFont(name: "Rubik-Medium", size: 12)!]
@@ -30,8 +29,7 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         navigationBar.standardAppearance = standardAppearance
         navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
         navigationBar.compactAppearance = compactAppearance
-        
-        //od tego momentu w dół - swipe to dismiss
+
         interactivePopGestureRecognizer?.delegate = self
     }
     

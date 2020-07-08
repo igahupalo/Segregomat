@@ -39,16 +39,35 @@ struct ButtonOutline: View {
 
 struct BackButton: View {
     var presentationMode: Binding<PresentationMode>
+    var icon: IconType
+    var color: Color = .black
+
+    enum IconType {
+        case arrow, cross
+    }
+
     init(presentationMode: Binding<PresentationMode>) {
         self.presentationMode = presentationMode
+        self.icon = .arrow
+    }
+    init(presentationMode: Binding<PresentationMode>, icon: IconType) {
+        self.presentationMode = presentationMode
+        self.icon = icon
+
+    }
+
+    init(presentationMode: Binding<PresentationMode>, icon: IconType, color: Color) {
+        self.presentationMode = presentationMode
+        self.icon = icon
+        self.color = color
+
     }
     var body: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
-            print("back")
         }) {
             HStack {
-                Image("backIcon").foregroundColor(.black).padding([.top, .bottom, .trailing], 15)
+                Image(self.icon == .arrow ? "backIcon" : "crossIcon").foregroundColor(self.color).padding([.top, .bottom, .trailing], 15)
             }
         }
     }

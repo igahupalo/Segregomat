@@ -12,6 +12,8 @@ import SSSwiftUIGIFView
 struct MainView: View {
     @ObservedObject var model = MainViewModel()
     @ObservedObject var itemListViewModel = ItemListViewModel()
+    @ObservedObject var scannerViewModel = ScannerViewModel()
+
 
     @State private var textInput = ""
     let searchFieldHint = "wyszukaj swój śmieć..."
@@ -32,10 +34,9 @@ struct MainView: View {
                 } else {
                     VStack(alignment: .center) {
                         Spacer()
-
-                        Image("dropDownList").overlay(
-                            VStack(alignment: .trailing) {
-                                Image("searchField").overlay(
+                        ListOutline().overlay(
+                            VStack(alignment: .trailing, spacing: 0) {
+                                SearchOutline().overlay(
                                     HStack(alignment: .center, spacing: 0) {
                                         ZStack(alignment: .leading) {
                                             Text(textInput == "" && isSearchFieldEdited == false ? searchFieldHint : "").font(.custom("Rubik-Medium", size: 20)).foregroundColor(.black).padding(0)
@@ -54,16 +55,17 @@ struct MainView: View {
                                     }
                                 )
                                 
-                                ScrollView {
+                                ScrollView(showsIndicators: false) {
                                     VStack{
-                                        HStack {
-                                            Spacer()
-                                        }
+
                                         ForEach(itemListViewModel.getMatchingItems(textInput: textInput)) { (item) in
                                             ListPosition(item: item, textInput: self.textInput)
                                         }
-                                    }
-                                }.frame(minWidth: 100, maxWidth: .infinity, alignment: .leading).padding([.leading], 25).padding([.top], 35)
+                                        HStack {
+                                            Spacer()
+                                        }
+                                    }.padding([.top], 5)
+                                }.frame(minWidth: 100, maxWidth: .infinity, alignment: .leading).padding([.leading], 30).padding([.top], 0)
                             },
                             alignment: .topTrailing
                         )
@@ -71,16 +73,13 @@ struct MainView: View {
                         Spacer()
                         
                         VStack(spacing: 30) {
-                            Button(action: {
-                                print("Hello World tapped!")
-                            }) {
+                            NavigationLink(destination: ScannerView()) {
                                 Text("zeskanuj").padding([.leading, .trailing], 40.0)
                                     .padding([.top, .bottom], 10)
                                     .background(ButtonOutline())
                                     .font(.custom("Rubik-Medium", size: 20))
                                     .foregroundColor(.black)
                             }
-                            
                             
                             Image("barcode")
                         }
@@ -103,6 +102,50 @@ struct MainView: View {
         }
     }
 }
+
+struct ListShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let w = rect.size.width
+        let h = rect.size.height
+
+        path.move(to: CGPoint(x: 1.5 * w / 16, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: h))
+        path.addLine(to: CGPoint(x: w, y: h))
+        path.addLine(to: CGPoint(x: w, y: 5 * h / 16))
+
+        return path
+    }
+}
+
+struct ListOutline: View {
+    var body: some View {
+        ListShape().stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.black).cornerRadius(1).frame(width: 327, height: 327, alignment: .center)
+    }
+}
+
+struct SearchShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let w = rect.size.width
+        let h = rect.size.height
+
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: w, y: 0))
+        path.addLine(to: CGPoint(x: w, y: h))
+        path.addLine(to: CGPoint(x: 0, y: h))
+
+        return path
+    }
+}
+
+struct SearchOutline: View {
+    var body: some View {
+        SearchShape().stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.black).cornerRadius(1).frame(width: 296.34375, height: 51.09375, alignment: .center)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

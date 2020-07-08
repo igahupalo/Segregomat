@@ -14,10 +14,11 @@ struct PszokMapView: View {
     @ObservedObject var pszokMapViewModel = PszokMapViewModel()
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color("colorBackground").edgesIgnoringSafeArea(.all)
 
             pszokMapViewModel.getMapView().navigationBarBackButtonHidden(true).navigationBarItems(leading: BackButton(presentationMode: presentationMode)).navigationBarTitle("SEGREGOMAT", displayMode: .inline)
+
         }
 
     }

@@ -15,7 +15,8 @@ import MapKit
 class PszokMapViewModel: ObservableObject {
     @Published var pszoks: [Pszok] = []
     @ObservedObject var session = FirebaseSession()
-    
+//    @EnvironmentObject var session: FirebaseSession
+
     func fetchPszoks() {
         self.session.getPszoks(pszokMapViewModel: self)
     }
@@ -83,6 +84,7 @@ class PszokMapViewModel: ObservableObject {
             override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
                 super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
                 markerTintColor = UIColor(named: "green")
+                glyphImage = UIImage(named: "pinImage")
                 canShowCallout = true
                 let launchMapButton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 rightCalloutAccessoryView = launchMapButton

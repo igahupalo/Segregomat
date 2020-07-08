@@ -43,8 +43,11 @@ class DetailsViewModel: ObservableObject {
                     texts.append(TextResult(text: split, isURL: true))
                 } else {
 
-                    texts.append(TextResult(text: split.trimmingCharacters(in: .whitespacesAndNewlines), isURL: false))
+                    texts.append(TextResult(text: split.trimmingCharacters(in: CharacterSet.init(charactersIn: " .")), isURL: false))
                 }
+            }
+            if(!texts[texts.count - 1].isURL) {
+                texts[texts.count - 1].text = texts[texts.count - 1].text + "."
             }
         } else {
             texts.append(TextResult(text: sourceText, isURL: false))

@@ -31,8 +31,9 @@ struct DetailsButton: View {
                     ForEach(detailsViewModel.getTexts(sourceText: details, texts: [TextResult]())) { (text) in
                         if(text.isURL) {
                             Button(action: {
-                                self.detailsViewModel.openURL(textUrl: text.text)
                                 self.isDetailsActive.toggle()
+                                self.detailsViewModel.openURL(textUrl: text.text)
+
                             }) {
                                 Text(text.text).underline().padding(0).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             }
