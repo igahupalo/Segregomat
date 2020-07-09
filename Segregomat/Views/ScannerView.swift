@@ -76,24 +76,18 @@ struct ScannerView: View {
             self.animationState = .none
         }
     }
-    
+
     private func getMatchingItem(scanned: String) -> Item? {
         var matchingItem: Item?
-        for barcode in session.barcodes {
-            if(String(barcode.code) == scanned) {
-                let id = barcode.id
-                for item in session.items {
-                    if(item.id == id) {
-                        matchingItem = item
-                        break;
-                    }
-                }
+        for item in session.items {
+            if(item.barcode == scanned) {
+                matchingItem = item
                 break;
             }
         }
-        
         return matchingItem
     }
+
 }
 
 struct ScannerView_Previews: PreviewProvider {

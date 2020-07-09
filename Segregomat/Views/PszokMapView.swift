@@ -13,17 +13,25 @@ struct PszokMapView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var session: FirebaseSession
 
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().tintColor = .clear
+        UINavigationBar.appearance().backgroundColor = .clear
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
             Color("colorBackground").edgesIgnoringSafeArea(.all)
 
-            MapView()
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(
-                    leading: BackButton(presentationMode: presentationMode))
-                .navigationBarTitle("SEGREGOMAT", displayMode: .inline)
-                .environmentObject(session)
-        }
+            MapView().edgesIgnoringSafeArea(.all)
+
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: BackButton(presentationMode: presentationMode))
+            .navigationBarTitle("", displayMode: .inline)
+            .environmentObject(session)
     }
 
     struct MapView: UIViewRepresentable {

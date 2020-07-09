@@ -32,7 +32,11 @@ extension UINavigationController: UIGestureRecognizerDelegate {
 
         interactivePopGestureRecognizer?.delegate = self
     }
-    
+
+    public func setTransparent() {
+        navigationBar.standardAppearance.backgroundColor = .clear
+    }
+
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return viewControllers.count > 1
     }

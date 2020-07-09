@@ -17,8 +17,14 @@ class FirebaseSession: ObservableObject {
 
     var ref: DatabaseReference = Database.database().reference()
 
+    func fetchData() {
+        self.getItems {
+            self.getBarcodes()
+        }
+        self.getPszoks()
+    }
 
-    func getItems() {
+    func getItems(completion: @escaping () -> Void) {
         var fetchedItems: [Item] = [Item]()
         ref.child("items").observeSingleEvent(of: .value, with: { (snapshot) in
             snapshot.children.forEach({ (child) in
@@ -28,12 +34,15 @@ class FirebaseSession: ObservableObject {
                     fetchedItems.append(item!)
                 }
             })
+
+            completion()
             self.items = fetchedItems
+
         }) { (error) in
             print(error.localizedDescription)
         }
     }
-    
+
     func getPszoks() {
         var fetchedPszoks: [Pszok] = [Pszok]()
         ref.child("pszoks").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -50,16 +59,18 @@ class FirebaseSession: ObservableObject {
     }
 
     func getBarcodes() {
-        var fetchedBarcodes: [Barcode] = [Barcode]()
         ref.child("bar_codes").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot.value as Any)
             snapshot.children.forEach({ (child) in
                 if let child = child as? DataSnapshot {
                     let barcode = Barcode(snapshot: child)
-                    fetchedBarcodes.append(barcode!)
+
+                    for index in 0...self.items.count - 1 {
+                        if(self.items[index].key == barcode!.id) {
+                            self.items[index].barcode = String(barcode!.code)
+                        }
+                    }
                 }
             })
-            self.barcodes = fetchedBarcodes
         }) { (error) in
             print(error.localizedDescription)
         }

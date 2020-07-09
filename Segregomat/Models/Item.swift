@@ -15,6 +15,7 @@ struct Item: Identifiable {
     let name: String
     let category: String
     let details: String
+    var barcode: String = ""
     let ref: DatabaseReference?
     
     init(key: String = "", name: String = "", category: String = "", details: String = "") {
@@ -50,6 +51,7 @@ struct Item: Identifiable {
             "details": details,
         ]
     }
+
     
     public var description: String {
         return "Name: \(name)\nCategory: \(category)\n"

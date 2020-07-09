@@ -72,7 +72,6 @@
 		42D04584245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */; };
 		42D04585245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */; };
 		42D04588245E2457001CAB56 /* ClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D04587245E2457001CAB56 /* ClassifiedView.swift */; };
-		42DB14F624B5F11C00673380 /* launchScreenAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42DB14F524B5F11C00673380 /* launchScreenAnimation.gif */; };
 		42DB14F924B61CA000673380 /* animationTitled.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42DB14F724B61C9F00673380 /* animationTitled.gif */; };
 		42DB14FA24B61CA000673380 /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42DB14F824B61CA000673380 /* animation.gif */; };
 		8097A259F408701CF7C3D5C0 /* Pods_Segregomat_SegregomatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D23AAA31F21F5FB7682BF7 /* Pods_Segregomat_SegregomatUITests.framework */; };
@@ -145,7 +144,6 @@
 		42D04566245E0B6B001CAB56 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		42D04567245E0B6B001CAB56 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		42D04587245E2457001CAB56 /* ClassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedView.swift; sourceTree = "<group>"; usesTabs = 0; };
-		42DB14F524B5F11C00673380 /* launchScreenAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launchScreenAnimation.gif; sourceTree = "<group>"; };
 		42DB14F724B61C9F00673380 /* animationTitled.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animationTitled.gif; sourceTree = "<group>"; };
 		42DB14F824B61CA000673380 /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
 		66EBD5AFA11E877EAA2A011D /* Pods_Segregomat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Segregomat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +224,6 @@
 			children = (
 				42DB14F824B61CA000673380 /* animation.gif */,
 				42DB14F724B61C9F00673380 /* animationTitled.gif */,
-				42DB14F524B5F11C00673380 /* launchScreenAnimation.gif */,
 				42D04535245DF3CB001CAB56 /* LaunchScreen.storyboard */,
 			);
 			path = "Launch Screen";
@@ -502,7 +499,6 @@
 				42D04583245E0B6C001CAB56 /* Rubik-Light.ttf in Resources */,
 				42D0455B245E0A9B001CAB56 /* Images.xcassets in Resources */,
 				42D0456B245E0B6B001CAB56 /* Rubik-Bold.ttf in Resources */,
-				42DB14F624B5F11C00673380 /* launchScreenAnimation.gif in Resources */,
 				42D04571245E0B6B001CAB56 /* Rubik-Medium.ttf in Resources */,
 				42DB14FA24B61CA000673380 /* animation.gif in Resources */,
 				425CA64624A94FD2008FF4C2 /* GoogleService-Info.plist in Resources */,

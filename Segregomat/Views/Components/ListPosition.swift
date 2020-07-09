@@ -60,10 +60,6 @@ struct ListPosition: View{
             }
         }
 
-        for child in itemList {
-            print(child.name)
-        }
-
         return itemList
     }
 

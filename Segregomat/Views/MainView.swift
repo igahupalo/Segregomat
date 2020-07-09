@@ -113,9 +113,7 @@ struct MainView: View {
 
     private func performAnim() {
         if(self.animationState == .launching) {
-            self.session.getItems()
-            self.session.getPszoks()
-            self.session.getBarcodes()
+            self.session.fetchData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.animationState = .none
             }
@@ -132,10 +130,6 @@ struct MainView: View {
             if(item.name.contains(textInput.lowercased())) {
                 itemList.append(item)
             }
-        }
-        
-        for child in itemList {
-            print(child.name)
         }
         
         return itemList

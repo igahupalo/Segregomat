@@ -21,7 +21,7 @@ struct Barcode: Identifiable {
         guard
             let value = snapshot.value as? [String: AnyObject],
             let item = value["item"]  as AnyObject? as? String,
-            let code = value["code"] as AnyObject? as? Int                                                                                      ,
+            let code = value["code"] as AnyObject? as? Int,
             let id = value["id"] as AnyObject? as? Int
 
         else {
