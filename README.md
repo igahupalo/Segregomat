@@ -6,6 +6,10 @@ Segregomat is an iOS application supporting waste segregation. Helps to classify
 
 The app was created with usage of SwifttUI framework and Firebase Firestore.
 
+## TODO
+
+The app was developed in 2020. Since then lots of stuff in SwiftUI have changed and currently previews don't work properly and views need to be refractored.
+
 ## Features
 
 The app helps to classify items depending on the type of waste segregation container they are supposed to be thrown out. User can look up for product by typing in its name or scanning a bar code. If a product is not supposed to be disposed in containers, a map of local waste collection centres is presented. 
