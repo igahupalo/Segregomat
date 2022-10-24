@@ -28,28 +28,30 @@ struct DetailsButton: View {
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
 
             } else {
-                ScrollView {
-                    ForEach(getTexts(sourceText: details, texts: [TextResult]())) { (text) in
-                        if(text.isURL) {
-                            Button(action: {
-                                self.isDetailsActive.toggle()
-                                self.openURL(textUrl: text.text)
-                            }) {
+                GeometryReader { geometry in
+                    ScrollView {
+                        ForEach(self.getTexts(sourceText: self.details, texts: [TextResult]())) { (text) in
+                            if(text.isURL) {
+                                Button(action: {
+                                    self.isDetailsActive.toggle()
+                                    self.openURL(textUrl: text.text)
+                                }) {
+                                    Text(text.text)
+                                        .underline()
+                                        .padding(0)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                }
+                            } else {
                                 Text(text.text)
-                                    .underline()
-                                    .padding(0)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             }
-                        } else {
-                            Text(text.text)
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         }
+                        .padding([.leading, .trailing], 15)
+                        .padding([.top, .bottom], 25)
+                        .font(.custom("Rubik-Light", size: 17))
+                        .foregroundColor(.black)
+                        .frame(minHeight: geometry.size.height)
                     }
-                    .padding([.leading, .trailing], 15)
-                    .padding([.top, .bottom], 25)
-                    .font(.custom("Rubik-Light", size: 17))
-                    .foregroundColor(.black)
-
                 }
             }
         }.background(DetailsButtonOutline(gap: !self.isDetailsActive ? 3 : 5)).onTapGesture {

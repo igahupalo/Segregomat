@@ -30,7 +30,9 @@ struct ScannerView: View {
     func torchToggle() {
         self.torchIsOn.toggle()
     }
-    
+
+    let rect = CGRect(x: 0, y: 0, width: 300, height: 150)
+
     var body: some View {
         ZStack {
             Color("colorBackground").edgesIgnoringSafeArea(.all)
@@ -38,17 +40,22 @@ struct ScannerView: View {
 
             if(animationState == .none) {
 
-                Scanner(supportBarcode: [.ean13, .ean8]).interval(delay: 1.0).found{
-                    if(!self.isScannerInactive) {
-                        self.scannedItem = self.getMatchingItem(scanned: $0)
-                        self.barcodeValue = $0
-                        self.animationState = .loading
-                    }
-                }.torchLight(isOn: self.torchIsOn)
+                ZStack(alignment: .center) {
+                    Scanner(supportBarcode: [.ean13, .ean8]).interval(delay: 2.0).found{
+                        if(!self.isScannerInactive) {
+                            self.scannedItem = self.getMatchingItem(scanned: $0)
+                            self.barcodeValue = $0
+                            self.animationState = .loading
+                        }
+                    }.torchLight(isOn: self.torchIsOn)
 
-                NavigationLink(destination: $scannedItem.wrappedValue == nil ? AnyView(UnclassifiedView()) : ($scannedItem.wrappedValue!.category == "pszok" ? AnyView(PszokView(item: self.$scannedItem.wrappedValue!)) : AnyView(ClassifiedView(item: self.$scannedItem.wrappedValue!))), isActive: $isScannerInactive) {
-                    EmptyView()
+                    NavigationLink(destination: $scannedItem.wrappedValue == nil ? AnyView(UnclassifiedView()) : ($scannedItem.wrappedValue!.category == "pszok" ? AnyView(PszokView(item: self.$scannedItem.wrappedValue!)) : AnyView(ClassifiedView(item: self.$scannedItem.wrappedValue!))), isActive: $isScannerInactive) {
+                        EmptyView()
+                    }
+
+                    ButtonShape().stroke(style: StrokeStyle(lineWidth: 4)).foregroundColor(.white).cornerRadius(1).frame(minWidth: 0, maxWidth: 300, minHeight: 0, maxHeight: 150).shadow(radius: 2)
                 }
+
             }
 
             else if(animationState == .loading) {
@@ -68,13 +75,14 @@ struct ScannerView: View {
                 trailing: Button(action: {self.torchToggle()}) {
                     Image(torchIsOn ? "boltIconFilled" : "boltIcon").foregroundColor(.white).padding([.top, .bottom, .leading], 15).shadow(color: Color.black, radius: 1, x: 0, y: 2)
             })
+
     }
 
     private func performAnim() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.isScannerInactive = true
             self.animationState = .none
-        }
+//        }
     }
 
     private func getMatchingItem(scanned: String) -> Item? {
@@ -87,7 +95,6 @@ struct ScannerView: View {
         }
         return matchingItem
     }
-
 }
 
 struct ScannerView_Previews: PreviewProvider {

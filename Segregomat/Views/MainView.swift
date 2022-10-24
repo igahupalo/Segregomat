@@ -8,6 +8,8 @@
 
 import SwiftUI
 import SSSwiftUIGIFView
+import SystemConfiguration
+
 
 struct MainView: View {
     @EnvironmentObject var session: FirebaseSession
@@ -16,9 +18,19 @@ struct MainView: View {
     @State private var animationState: AnimationState = .launching
     @State private var chosenItem: Item? = nil
     @State private var isLoaded = false
+    @State private var reachibility = SCNetworkReachabilityCreateWithName(nil, "www.apple.com")
+    @State private var isAlertShown = false
 
     let searchFieldHint = "wyszukaj swój śmieć..."
 
+    private func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+        let canConnectWithoutInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+
+        return isReachable && (!needsConnection || canConnectWithoutInteraction)
+    }
     var body: some View {
         
         NavigationView {
@@ -69,7 +81,7 @@ struct MainView: View {
                                 
                                 ScrollView(showsIndicators: false) {
                                     VStack{
-                                        
+
                                         ForEach(getMatchingItems(textInput: textInput)) { (item) in
                                             ListPosition(item: item, textInput: self.textInput, animationState: self.$animationState, chosenItem: self.$chosenItem)
                                         }
@@ -103,6 +115,9 @@ struct MainView: View {
                     }.navigationBarTitle("SEGREGOMAT", displayMode: .inline)
                         .navigationBarItems(trailing: OptionButton())
                         .accentColor(.black)
+                        .alert(isPresented: $isAlertShown) {
+                            Alert(title: Text("Brak połączenia"), message: Text("Nie można zauktualizować bazy produktów."), dismissButton: .default(Text("OK")))
+                        }
                 }
             }.onDisappear(perform: {
                 self.animationState = .none
@@ -113,6 +128,11 @@ struct MainView: View {
 
     private func performAnim() {
         if(self.animationState == .launching) {
+            var flags = SCNetworkReachabilityFlags()
+            SCNetworkReachabilityGetFlags(self.reachibility!, &flags)
+
+            self.isAlertShown = !self.isNetworkReachable(with: flags)
+
             self.session.fetchData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.animationState = .none
@@ -120,6 +140,7 @@ struct MainView: View {
         } else if(self.animationState == .loading) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.isLoaded.toggle()
+                self.animationState = .none
             }
         }
     }

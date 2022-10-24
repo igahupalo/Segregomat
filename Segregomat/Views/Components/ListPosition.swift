@@ -16,7 +16,6 @@ struct ListPosition: View{
     let item: Item
     let textInput: String
 
-    
     init(item: Item, textInput: String, animationState: Binding<AnimationState>, chosenItem: Binding<Item?>) {
         self.item = item
         self.textInput = textInput.lowercased()
@@ -62,5 +61,4 @@ struct ListPosition: View{
 
         return itemList
     }
-
 }

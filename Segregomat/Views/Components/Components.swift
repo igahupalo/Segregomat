@@ -9,8 +9,6 @@
 import Foundation
 import SwiftUI
 
-
-
 struct ButtonShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -24,7 +22,6 @@ struct ButtonShape: Shape {
         path.addLine(to: CGPoint(x: w, y: h))
         path.addLine(to: CGPoint(x: 0, y: h))
         path.addLine(to: CGPoint(x: 0, y: 0))
-
                 
         return path
     }
@@ -50,10 +47,10 @@ struct BackButton: View {
         self.presentationMode = presentationMode
         self.icon = .arrow
     }
+
     init(presentationMode: Binding<PresentationMode>, icon: IconType) {
         self.presentationMode = presentationMode
         self.icon = icon
-
     }
 
     init(presentationMode: Binding<PresentationMode>, icon: IconType, color: Color) {

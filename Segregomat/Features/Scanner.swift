@@ -12,6 +12,8 @@ struct Scanner: UIViewRepresentable {
     private let session = AVCaptureSession()
     private let delegate = CarBodeCameraDelegate()
     private let metadataOutput = AVCaptureMetadataOutput()
+    var qrCodeFrameView: UIView?
+
 
     public init(supportBarcode: [AVMetadataObject.ObjectType]) {
         self.supportBarcode = supportBarcode
@@ -70,22 +72,8 @@ struct Scanner: UIViewRepresentable {
                 uiView.layer.addSublayer(previewLayer)
                 uiView.previewLayer = previewLayer
 
-
-
                 session.commitConfiguration()
-
                 session.startRunning()
-
-                //                let scannerRect = UIView()
-                //                scannerRect.layer.frame = CGRect(x:10, y:10, width:300, height:300)
-                //                scannerRect.layer.borderWidth = 5
-                //                uiView.addSubview(scannerRect)
-
-                //                let rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: CGRect(x:10, y:10, width:300, height:300))
-                //                metadataOutput.rectOfInterest = rectOfInterest
-
-                //                metadataOutput.rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanRect)
-
             }
         }
 
@@ -197,11 +185,11 @@ public class CameraPreview: UIView {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(onClick))
         self.addGestureRecognizer(gesture)
     }
-    
+
     @objc func onClick() {
         delegate?.onSimulateScanning()
     }
-    
+
     override public func layoutSubviews() {
         super.layoutSubviews()
         #if targetEnvironment(simulator)

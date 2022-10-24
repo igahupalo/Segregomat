@@ -14,6 +14,8 @@ struct ClassifiedView: View {
     @State var details: String = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var isDetailsActive = false
+
+    @State var buttonHeight = CGFloat(70)
     
     init() {
         self.category = "mixed"
@@ -43,26 +45,25 @@ struct ClassifiedView: View {
         ZStack {
             Color("colorBackground")
                 .edgesIgnoringSafeArea(.all)
-            
+
             VStack(alignment: .center) {
                 if(!self.isDetailsActive) {
                     Spacer()
-                    
+
                     VStack {
-                        Image(category)
-                        Text(categoryLabel)
+                        Image(self.category)
+                        Text(self.categoryLabel)
                             .font(.custom("Rubik-Bold", size: 20))
                     }.animation(.easeInOut)
 
                     Spacer()
                 }
                 
-                DetailsButton(isDetailsActive: $isDetailsActive, details: $details)
-                    .frame(maxWidth: !isDetailsActive ? 170 : .infinity, maxHeight: !isDetailsActive ? 70 : .infinity)
+                DetailsButton(isDetailsActive: self.$isDetailsActive, details: self.$details)
+                    .frame(maxWidth: !self.isDetailsActive ? 170 : .infinity, maxHeight: !self.isDetailsActive ? 70 : .infinity)
                     .padding()
                 
                 Spacer()
-                
             }.navigationBarBackButtonHidden(true)
                 .navigationBarItems(
                     leading: BackButton(presentationMode: presentationMode),

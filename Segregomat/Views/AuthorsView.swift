@@ -61,7 +61,7 @@ struct AuthorsText: View {
 
                     Text("PROMOTORZY")
                         .font(.custom("Rubik-Bold", size: 14))
-                    Text("Marek Rybicki\nMaja Wolińska\nAleksandra Trojanowska")
+                    Text("Marek Rybicki\nMaja Wolińska")
                         .font(.custom("Rubik-Regular", size: 14))
                         .multilineTextAlignment(.center)
                     
@@ -70,8 +70,10 @@ struct AuthorsText: View {
                 VStack(alignment: .center, spacing: 0) {
                     Text("POMOC TECHNICZNA")
                         .font(.custom("Rubik-Bold", size: 14))
-                    Text("Krzysztof Waśko")
+                    Text("Aleksandra Trojanowska\nKrzysztof Waśko")
                         .font(.custom("Rubik-Regular", size: 14))
+                        .multilineTextAlignment(.center)
+
                 }
 
                 Text("ASP Wrocław\n2020")

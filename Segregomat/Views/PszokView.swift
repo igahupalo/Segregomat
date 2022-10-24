@@ -49,7 +49,7 @@ struct PszokView: View {
                             Spacer()
                         }
                         DetailsButton(isDetailsActive: $isDetailsActive, details: $details).padding(5)
-                    }.frame(maxHeight: !isDetailsActive ? 80 : .infinity)
+                        }.frame(maxHeight: !isDetailsActive ? 80 : .infinity)
                         .padding()
                     
                     if(!self.isDetailsActive) {

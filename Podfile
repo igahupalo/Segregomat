@@ -12,16 +12,6 @@ target 'Segregomat' do
   pod 'lottie-ios'
   pod 'Firebase'
   pod 'Firebase/Auth'
-  pod 'Firebase/Analytics'
   pod 'Firebase/Database'
-
-  target 'SegregomatTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'SegregomatUITests' do
-    # Pods for testing
-  end
 
 end
